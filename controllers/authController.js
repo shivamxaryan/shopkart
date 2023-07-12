@@ -1,4 +1,5 @@
 import userModel from "../models/userModel.js";
+import { comparePassword, hashPassword } from "./../utils/authUtils.js";
 
 export const registerController = async (req, res) => {
   try {
@@ -46,7 +47,7 @@ export const registerController = async (req, res) => {
       user,
     });
 
-    
+
   } catch (error) {
     console.log(error);
     res.status(500).send({
